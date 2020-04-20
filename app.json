@@ -1,0 +1,17 @@
+{
+  "name": "PageTurner",
+  "displayName": "PageTurner",
+  "expo": {
+    "name": "PageTurner",
+    "slug": "PageTurner",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
