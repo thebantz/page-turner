@@ -48,13 +48,13 @@ function CurrentBook({ navigation }) {
       <TitleAuthor />
       <TouchableOpacity
         style={styles.progressButton}
-        onPress={() => navigation.navigate('Details')}
+        onPress={() => navigation.navigate('MakeProgress')}
       >
         <Text style={styles.touchOpText}>Progress</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.doneButton}
-        onPress={() => navigation.navigate('Details')}
+        onPress={() => navigation.navigate('FindBook')}
       >
         <Text style={styles.touchOpText}>Done</Text>
       </TouchableOpacity>
