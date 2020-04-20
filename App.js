@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import 'react-native-gesture-handler';
 
 import HomeScreen from './Components/HomeScreen.js';
+import CurrentBook from './Components/CurrentBook.js';
 
 
 const instructions = Platform.select({
@@ -43,6 +44,14 @@ function DetailsScreen({ navigation }) {
         title="Go to HomeScreen"
         onPress={() => navigation.navigate('Home')}
       />
+      <Button
+        title="Go to More Details"
+        onPress={() => navigation.push('Details')}
+      />
+      <Button
+        title="See Current Book"
+        onPress={() => navigation.navigate('CurrentBook')}
+      />
     </View>
   );
 }
@@ -54,6 +63,8 @@ export default function App() {
         <Stack.Screen name="Home" options={{ headerShown: false }}
           component={HomeScreen} />
         <Stack.Screen name="Details" component={DetailsScreen} />
+        <Stack.Screen name="CurrentBook" options={{ headerShown: false }}
+          component={CurrentBook} />
       </Stack.Navigator>
     </NavigationContainer>
   );
