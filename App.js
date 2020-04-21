@@ -7,7 +7,9 @@ import 'react-native-gesture-handler';
 import HomeScreen from './Components/HomeScreen.js';
 import CurrentBook from './Components/CurrentBook.js';
 import FindBook from './Components/FindBook.js';
-import MakeProgress from './Components/MakeProgress.js'
+import MakeProgress from './Components/MakeProgress.js';
+// import BookList from './Components/BookList.js';
+import FlatListDemo from './Components/FlatList.js';
 
 
 const instructions = Platform.select({
@@ -58,6 +60,11 @@ function DetailsScreen({ navigation }) {
         title="Find Next Book"
         onPress={() => navigation.navigate('FindBook')}
       />
+      <Button
+        title="FlatListDemo"
+        onPress={() => navigation.navigate('FlatListDemo')}
+      />
+
     </View>
   );
 }
@@ -75,6 +82,8 @@ export default function App() {
           component={FindBook} />
         <Stack.Screen name="MakeProgress" options={{ headerShown: true }}
           component={MakeProgress} />
+        <Stack.Screen name="FlatListDemo" options={{ headerShown: true }}
+          component={FlatListDemo} />
       </Stack.Navigator>
     </NavigationContainer>
   );

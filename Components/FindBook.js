@@ -3,11 +3,11 @@ import { useState, useEffect } from "react";
 import { TextInput, FlatList, ActivityIndicator, Platform, StyleSheet, Text, View, Button, Alert, TouchableOpacity, Image } from 'react-native';
 import yourAPIKey from './config.js';
 
+
 function FindBook({ navigation }) {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
-  const [text, setText] = useState('');
- 
+  const [value, onChangeText] = useState('Useless Placeholder');
 
   useEffect(() => {
     const query = 'javascript';
@@ -17,20 +17,19 @@ function FindBook({ navigation }) {
         setData(responseData.items);
       })
       .catch((error) => console.error(error))
-      .finally(() => setLoading(false))
-      .done();
-  })
+      .finally(() => setLoading(false));
+  });
 
   return (
     <View style={styles.container}>
       <Text>Find Book Dropdown Place Here</Text>
       <TextInput
         style={styles.textInputStyle}
-        onChangeText={text => alert(text)}
-        value={text}
+        onChangeText={text => onChangeText(text)}
+        value={value}
         placeholder="Find book"
       />
-      {isLoading ? <ActivityIndicator /> : (
+      {isLoading ? <ActivityIndicator /> :
         <FlatList
           data={data}
           keyExtractor={({ id }, index) => id}
@@ -38,13 +37,7 @@ function FindBook({ navigation }) {
             <Image source={{ uri: item.volumeInfo.imageLinks.thumbnail }} style={{ width: 100, height: 100 }} />
           )}
         />
-      )}
-
-      {/* {data.map(book => (
-        <View style={styles.gallery}>
-          <Image source={{ uri: book.volumeInfo.imageLinks.thumbnail }} style={{ width: 100, height: 100 }} />
-        </View>
-      ))} */}
+      }
     </View>
   )
 }
@@ -76,6 +69,7 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   textInputStyle: {
+    width: 200,
     height: 40,
     borderWidth: 1,
     paddingLeft: 10,

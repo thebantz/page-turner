@@ -6,7 +6,7 @@ function Avatar() {
   return (
     <Image
       style={styles.avatar}
-      source={{ uri: 'https://s3.amazonaws.com/uifaces/faces/twitter/ma_tiax/128.jpg' }}
+      source={{ uri: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg' }}
     />
   );
 }
@@ -45,7 +45,6 @@ function CurrentBook({ navigation }) {
       <Avatar onPress={() => navigation.navigate('Details')} />
       <Progress />
       <BookCover />
-      <TitleAuthor />
       <TouchableOpacity
         style={styles.progressButton}
         onPress={() => navigation.navigate('MakeProgress')}
@@ -54,7 +53,7 @@ function CurrentBook({ navigation }) {
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.doneButton}
-        onPress={() => navigation.navigate('FindBook')}
+        onPress={() => navigation.navigate('FlatListDemo')}
       >
         <Text style={styles.touchOpText}>Done</Text>
       </TouchableOpacity>
@@ -74,7 +73,7 @@ const styles = StyleSheet.create({
     width: 75,
     height: 75,
     marginBottom: 10,
-    left: 42,
+    left: 56,
     top: 701,
     position: 'absolute'
   },
@@ -108,12 +107,12 @@ const styles = StyleSheet.create({
   },
   progressButton: {
     alignItems: "center",
-    width: '30%',
+    width: '28%',
     borderColor: '#DDDDDD',
     borderWidth: 1,
     padding: 10,
     position: 'absolute',
-    left: 120,
+    left: 145,
     top: 719
   },
   doneButton: {
@@ -123,7 +122,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     position: 'absolute',
-    left: 250,
+    left: 275,
     top: 719
   },
   viewProgress: {
@@ -131,13 +130,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     position: 'absolute',
-    width: 128,
-    height: 73,
-    left: 45,
-    top: 38
+    width: 200,
+    height: 100,
+    left: 60,
+    top: 120
   },
   textProgress: {
-    fontSize: 62,
+    fontSize: 80,
+    marginEnd: 20,
     color: '#FFFFFF',
   },
   detailsProgress: {
