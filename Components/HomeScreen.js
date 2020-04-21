@@ -4,18 +4,15 @@ import { Platform, StyleSheet, Text, View, Button, Alert, TouchableOpacity } fro
 
 
 export default function HomeScreen({ navigation }) {
-  const [count, setCount] = useState(0);
-  const onPress = () => setCount(prevCount => prevCount + 1);
+
   return (
     <View style={styles.container}>
       <Text style={styles.getStartedText}>PAGE TURNER</Text>
       <Text style={styles.instructions}>Start building your reading habit today!</Text>
-      {/* <Button title="LOG IN" onPress={() => Alert.alert('Logging you in...')}
-        color="#f194ff"></Button> */}
       <View style={styles.separator}></View>
       <TouchableOpacity
         style={styles.button}
-        onPress={() => navigation.navigate('Details')}
+        onPress={() => navigation.navigate('CurrentBook')}
       >
         <Text style={styles.touchOpText}>LOG IN</Text>
       </TouchableOpacity>

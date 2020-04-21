@@ -53,7 +53,7 @@ function CurrentBook({ navigation }) {
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.doneButton}
-        onPress={() => navigation.navigate('FlatListDemo')}
+        onPress={() => navigation.navigate('FindYourNewBook')}
       >
         <Text style={styles.touchOpText}>Done</Text>
       </TouchableOpacity>

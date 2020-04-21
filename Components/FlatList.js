@@ -109,7 +109,7 @@ class FlatListDemo extends Component {
               subtitle={item.volumeInfo.authors[0]}
             />
           )}
-          keyExtractor={item => item.email}
+          keyExtractor={item => item.volumeInfo}
           ItemSeparatorComponent={this.renderSeparator}
           ListHeaderComponent={this.renderHeader}
         />

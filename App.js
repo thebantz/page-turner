@@ -61,7 +61,7 @@ function DetailsScreen({ navigation }) {
         onPress={() => navigation.navigate('FindBook')}
       />
       <Button
-        title="FlatListDemo"
+        title="FindYourNewBook"
         onPress={() => navigation.navigate('FlatListDemo')}
       />
 
@@ -76,13 +76,13 @@ export default function App() {
         <Stack.Screen name="Home" options={{ headerShown: false }}
           component={HomeScreen} />
         <Stack.Screen name="Details" component={DetailsScreen} />
-        <Stack.Screen name="CurrentBook" options={{ headerShown: false }}
+        <Stack.Screen name="CurrentBook" options={{ headerShown: false, title: 'Current' }}
           component={CurrentBook} />
         <Stack.Screen name="FindBook" options={{ headerShown: true }}
           component={FindBook} />
         <Stack.Screen name="MakeProgress" options={{ headerShown: true }}
           component={MakeProgress} />
-        <Stack.Screen name="FlatListDemo" options={{ headerShown: true }}
+        <Stack.Screen name="FindYourNewBook" options={{ headerShown: true, title: 'Choose New Book' }}
           component={FlatListDemo} />
       </Stack.Navigator>
     </NavigationContainer>
