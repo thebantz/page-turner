@@ -107,6 +107,7 @@ class FlatListDemo extends Component {
               leftAvatar={{ source: { uri: item.volumeInfo.imageLinks.thumbnail } }}
               title={item.volumeInfo.title}
               subtitle={item.volumeInfo.authors[0]}
+              onPress={() => alert('Launching new book...')}
             />
           )}
           keyExtractor={item => item.volumeInfo}

@@ -2,6 +2,9 @@ import * as React from 'react';
 import { useState } from "react";
 import { Platform, StyleSheet, Text, View, Button, Alert, TouchableOpacity, Image } from 'react-native';
 
+
+// const progressPercent = this.props.navigation.state.params.progress;
+
 function Avatar() {
   return (
     <Image
