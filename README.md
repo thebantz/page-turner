@@ -1,5 +1,5 @@
 ## Page Turner
-> A reading habit builder iOS mobile application
+> A reading habit builder iOS mobile application using Google Books API.
 
 ## Users ##
   > This mobile application is for users who want to jumpstart their reading journey through daily reading streaks by number of pages read or duration of reading within a given day. The application leverages on user-data to showcase their progress. 
