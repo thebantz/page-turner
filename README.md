@@ -9,3 +9,7 @@
 
 ## The Solution ##
   > The application hopes to disable phone usage for a set duration, allowing the users to spend their time reading their current book distraction-free. The application guides the users to track their reading journey through a beautiful dashboard, a library displaying all the books they have read, and a bookmarking functionality. 
+
+
+## Feature Demos ##
+  > [Bookmarking Feature](https://youtu.be/YX-HkUjYWQU)
