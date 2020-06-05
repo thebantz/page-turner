@@ -1,9 +1,8 @@
 import * as React from 'react';
 import { useState } from "react";
 import { Platform, StyleSheet, Text, View, Button, Alert, TouchableOpacity, Image } from 'react-native';
-
-
-// const progressPercent = this.props.navigation.state.params.progress;
+import CurrentContextProvider from './contexts/CurrentContext.js';
+import { CurrentContext } from './contexts/CurrentContext.js';
 
 function Avatar() {
   return (
@@ -23,13 +22,27 @@ function BookCover() {
   )
 }
 
-function Progress() {
-  return (
-    <View style={styles.viewProgress}>
-      <Text style={styles.textProgress}>57%</Text>
-      <Text style={styles.detailsProgress}>in 2 days</Text>
-    </View>
-  )
+// function Progress() {
+//   return (
+//     <CurrentContextProvider>
+//       <View style={styles.viewProgress}>
+//         <Text style={styles.textProgress}>57%</Text>
+//         <Text style={styles.detailsProgress}>in 2 days</Text>
+//       </View>
+//     </CurrentContextProvider>
+//   )
+// }
+
+class Progress extends React.Component {
+  static contextType = CurrentContext;
+  render() {
+    return (
+      <View style={styles.viewProgress}>
+        <Text style={styles.textProgress}>57%</Text>
+        <Text style={styles.detailsProgress}>in 2 days</Text>
+      </View>
+    )
+  }
 }
 
 function TitleAuthor() {
@@ -44,23 +57,25 @@ function TitleAuthor() {
 
 function CurrentBook({ navigation }) {
   return (
-    <View style={styles.container}>
-      <Avatar onPress={() => navigation.navigate('Details')} />
-      <Progress />
-      <BookCover />
-      <TouchableOpacity
-        style={styles.progressButton}
-        onPress={() => navigation.navigate('MakeProgress')}
-      >
-        <Text style={styles.touchOpText}>Progress</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={styles.doneButton}
-        onPress={() => navigation.navigate('FindYourNewBook')}
-      >
-        <Text style={styles.touchOpText}>Done</Text>
-      </TouchableOpacity>
-    </View>
+    <CurrentContextProvider>
+      <View style={styles.container}>
+        <Avatar onPress={() => navigation.navigate('Details')} />
+        <Progress />
+        <BookCover />
+        <TouchableOpacity
+          style={styles.progressButton}
+          onPress={() => navigation.navigate('MakeProgress')}
+        >
+          <Text style={styles.touchOpText}>Progress</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.doneButton}
+          onPress={() => navigation.navigate('FindYourNewBook')}
+        >
+          <Text style={styles.touchOpText}>Done</Text>
+        </TouchableOpacity>
+      </View>
+    </CurrentContextProvider>
   );
 }
 

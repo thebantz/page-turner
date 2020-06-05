@@ -11,6 +11,7 @@ import MakeProgress from './Components/MakeProgress.js';
 // import BookList from './Components/BookList.js';
 import FlatListDemo from './Components/FlatList.js';
 
+import CurrentContextProvider from './Components/contexts/CurrentContext.js';
 
 const instructions = Platform.select({
   ios: `Press Cmd+R to reload,\nCmd+D or shake for dev menu`,

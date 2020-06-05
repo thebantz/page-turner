@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, FlatList, ActivityIndicator } from 'react-native';
 import { ListItem, SearchBar } from 'react-native-elements';
 import TouchableScale from 'react-native-touchable-scale'; // https://github.com/kohver/react-native-touchable-scale
-import yourAPIKey from './config.js';
+// import yourAPIKey from './config.js';
 
 class FlatListDemo extends Component {
   constructor(props) {
