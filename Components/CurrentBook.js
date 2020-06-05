@@ -22,25 +22,19 @@ function BookCover() {
   )
 }
 
-// function Progress() {
-//   return (
-//     <CurrentContextProvider>
-//       <View style={styles.viewProgress}>
-//         <Text style={styles.textProgress}>57%</Text>
-//         <Text style={styles.detailsProgress}>in 2 days</Text>
-//       </View>
-//     </CurrentContextProvider>
-//   )
-// }
-
 class Progress extends React.Component {
   static contextType = CurrentContext;
   render() {
     return (
-      <View style={styles.viewProgress}>
-        <Text style={styles.textProgress}>57%</Text>
-        <Text style={styles.detailsProgress}>in 2 days</Text>
-      </View>
+      <CurrentContext.Consumer>{(context) => {
+        return (
+          <View style={styles.viewProgress}>
+            <Text style={styles.textProgress}>57%</Text>
+            <Text style={styles.detailsProgress}>in 2 days</Text>
+          </View>
+        )
+      }}
+      </CurrentContext.Consumer>
     )
   }
 }
